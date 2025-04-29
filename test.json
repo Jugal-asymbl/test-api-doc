@@ -1,38 +1,535 @@
 {
-    "quiz": {
-        "sport": {
-            "q1": {
-                "question": "Which one is correct team name in NBA?",
-                "options": [
-                    "New York Bulls",
-                    "Los Angeles Kings",
-                    "Golden State Warriros",
-                    "Huston Rocket"
-                ],
-                "answer": "Huston Rocket"
-            }
-        },
-        "maths": {
-            "q1": {
-                "question": "5 + 7 = ?",
-                "options": [
-                    "10",
-                    "11",
-                    "12",
-                    "13"
-                ],
-                "answer": "12"
-            },
-            "q2": {
-                "question": "12 - 8 = ?",
-                "options": [
-                    "1",
-                    "2",
-                    "3",
-                    "4"
-                ],
-                "answer": "4"
-            }
-        }
-    }
+	"info": {
+		"_postman_id": "2832ee04-fa43-47eb-948f-44a2aa052d42",
+		"name": "Daxtra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34189010"
+	},
+	"item": [
+		{
+			"name": "Candidates",
+			"item": [
+				{
+					"name": "Add Candidate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"add_candidate\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\",\n        \"Candidate\": [\n            {\n                \"CandidateId\": \"candidate01\",\n                \"StructuredOptions\": {\n                    \"LastName\": \"Pareek\"\n                }\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ds-trial.daxtra.com/jws/dispatch",
+							"protocol": "https",
+							"host": [
+								"ds-trial",
+								"daxtra",
+								"com"
+							],
+							"path": [
+								"jws",
+								"dispatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Multiple Candidate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"add_candidate\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\",\n        \"Candidate\": [\n            {\n                \"CandidateId\": \"candidate005\",\n                \"StructuredOptions\": {\n                    \"FirstName\": \"Vinay\",\n                    \"LastName\": \"Sharma\",\n                    \"FullName\": \"Vinay Sharma\",\n                    \"Nationality\": \"Indian\",\n                    \"Age\": \"26\",\n                    \"Contact\": {\n                        \"Phone\": \"9414030000\",\n                        \"Mobile\": \"0987154321\",\n                        \"Email\": \"test+12@test.com\"\n                    }\n                }\n            },\n            {\n                \"CandidateId\": \"candidate006\",\n                \"StructuredOptions\": {\n                    \"FirstName\": \"Anurag\",\n                    \"LastName\": \"Pathak\",\n                    \"FullName\": \"Anurag Pathak\",\n                    \"Nationality\": \"Indian\",\n                    \"Age\": \"23\",\n                    \"Contact\": {\n                        \"Phone\": \"9414000120\",\n                        \"Mobile\": \"0987654397\",\n                        \"Email\": \"anurag.pathak@yahoo.com\"\n                    }\n                }\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{searchMatchBaseUrl}}",
+							"host": [
+								"{{searchMatchBaseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ping",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"pinqg\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{searchMatchBaseUrl}}",
+							"host": [
+								"{{searchMatchBaseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Candidate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"get_candidate\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\",\n        \"Candidate\": [{\n            \"CandidateId\": \"003a5000008qrwTAAQ\"\n        }]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{searchMatchBaseUrl}}",
+							"host": [
+								"{{searchMatchBaseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Candidate ids",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"get_candidate_ids\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{searchMatchBaseUrl}}",
+							"host": [
+								"{{searchMatchBaseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Candidate",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Candidate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"delete_candidates\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\",\n        \"Candidate\": [\n            {\n                \"CandidateId\": \"Candidate001\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{searchMatchBaseUrl}}",
+							"host": [
+								"{{searchMatchBaseUrl}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vacancy",
+			"item": [
+				{
+					"name": "Get Vacancy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"get_vacancy\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\",\n        \"Vacancy\": [\n            {\n                \"VacancyId\": \"a0JO1000001CT2TMAW\"\n            }\n        ]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{searchMatchBaseUrl}}",
+							"host": [
+								"{{searchMatchBaseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Vacancies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"get_vacancy_ids\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\"\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{searchMatchBaseUrl}}",
+							"host": [
+								"{{searchMatchBaseUrl}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Summary Report",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"DxRequest\": {\n        \"Action\": \"summary_report\",\n        \"Username\": \"{{username}}\",\n        \"Password\": \"{{password}}\",\n        \"Database\": \"{{database}}\"\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{searchMatchBaseUrl}}",
+							"host": [
+								"{{searchMatchBaseUrl}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resume Parsing",
+			"item": [
+				{
+					"name": "Parse Resume",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "JWT",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIyMDI0MDgyNzAxMjE0MSIsImlhdCI6IjE3MjQ3NDY5MDEiLCJleHAiOiIxNzI0NzUwNTAxIiwiYWNjb3VudCI6ImFzeW1ibCJ9.fO2skanA8RYqKieij-mK0As4d9EgEmfjx7WmqKQGlhw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "account",
+									"value": "asymbl",
+									"description": "`string` -- [account name](#922693b7-28fc-4730-a7c3-80fbe3c99f6c) allocated to you by DaXtra",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"description": "`base64/string/binary` -- file content either Base64-encoded or direct-encoded",
+									"type": "file",
+									"src": "/Users/vishwaroopshah/Downloads/manual-automation-testing-resume-3-years-experience.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://cvx-latest.daxtra.com/cvx/rest/api/v1/profile/full/json",
+							"protocol": "https",
+							"host": [
+								"cvx-latest",
+								"daxtra",
+								"com"
+							],
+							"path": [
+								"cvx",
+								"rest",
+								"api",
+								"v1",
+								"profile",
+								"full",
+								"json"
+							]
+						},
+						"description": "> Sends a resume for processing and returns a \"Resume\" JSON object with structured representation.\n\n###### Data formats\n* [multipart/form-data](#8ecb8780-312e-4521-873e-4d0084b2d0af) -- [application/x-www-form-urlencode](#98fd37f5-0c9b-4757-9ae5-3a4471986dbc) -- [application/json](#c307549f-0921-4ebb-8bd9-2a9c4bb29632) -- [text/xml](#fbe960f8-3d8c-43bd-bbd6-f7b9363595ac)\n\n###### Response data\n* 200 - `application/json` - [Resume JSON object](https://cvxdemo.daxtra.com/cvx/#integration-output)\n* [Error Handling](https://api-doc.daxtra.com/#6e85f632-26b7-4eb7-845f-6f065a4d06f4)\n\n###### Integration example\n* [JavaScript - data transfer: multipart/form-data](https://api-doc.daxtra.com/?version=latest#b5de7f1a-823a-4374-a1b3-b6119452564f)"
+					},
+					"response": [
+						{
+							"name": "Parse Resume",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "account",
+											"value": "{{TEST_ACCOUNT}}",
+											"description": "`string` -- [account name](#922693b7-28fc-4730-a7c3-80fbe3c99f6c) allocated to you by DaXtra",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"value": "Sm9obiBTbWl0aAoyMDE3LTIwMTgsIERheHRyYSBMdGQsIFByb2dyYW0gbWFuYWdlcgpSZXBvbnNpYmxlIGZvciBJVCBwcm9qZWN0IHBsYW5uaW5nLg==",
+											"description": "`base64/string/binary` -- file content either Base64-encoded or direct-encoded",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{DAXTRA_SERVER_IP}}/cvx/rest/api/v1/profile/full/json",
+									"protocol": "https",
+									"host": [
+										"{{DAXTRA_SERVER_IP}}"
+									],
+									"path": [
+										"cvx",
+										"rest",
+										"api",
+										"v1",
+										"profile",
+										"full",
+										"json"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jun 2019 00:29:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.2.34 (Amazon)"
+								},
+								{
+									"key": "Content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "CVXtractorServiceHTTP",
+									"value": "v1.0"
+								},
+								{
+									"key": "Content-length",
+									"value": "1324"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Resume\": {\n        \"StructuredResume\": {\n            \"PersonName\": {\n                \"FormattedName\": \"John Smith\",\n                \"FamilyName\": \"Smith\",\n                \"GivenName\": \"John\",\n                \"sex\": \"Male\"\n            },\n            \"EmploymentHistory\": [\n                {\n                    \"employerOrgType\": \"soleEmployer\",\n                    \"EndDate\": \"2018\",\n                    \"MonthsOfWork\": 12,\n                    \"EmployerOrgName\": \"Daxtra Ltd\",\n                    \"Title\": [\n                        \"Program manager\"\n                    ],\n                    \"OrgName\": \"Daxtra Ltd\",\n                    \"PositionType\": \"PERMANENT\",\n                    \"JobArea\": \"it\",\n                    \"JobGrade\": \"joblevel-management-low\",\n                    \"StartDate\": \"2017\",\n                    \"Description\": \"Reponsible for IT project planning.\"\n                }\n            ],\n            \"Competency\": [\n                {\n                    \"skillLevel\": 100,\n                    \"skillName\": \"Project Planning\",\n                    \"description\": \"Skill\",\n                    \"auth\": true,\n                    \"skillUsed\": {\n                        \"value\": 12,\n                        \"type\": \"Months\"\n                    },\n                    \"lastUsed\": \"2018\",\n                    \"skillProficiency\": \"EXCELLENT\",\n                    \"skillAliasArray\": [\n                        \"Project Planning\"\n                    ]\n                },\n                {\n                    \"skillLevel\": 100,\n                    \"skillName\": \"Program manager\",\n                    \"description\": \"Held Position\",\n                    \"auth\": false,\n                    \"skillUsed\": {\n                        \"value\": 12,\n                        \"type\": \"Months\"\n                    },\n                    \"lastUsed\": \"2018\",\n                    \"skillProficiency\": \"EXCELLENT\",\n                    \"skillAliasArray\": [\n                        \"Program manager\"\n                    ]\n                },\n                {\n                    \"auth\": true,\n                    \"skillLevel\": 100,\n                    \"skillName\": \"industry~it\",\n                    \"skillCount\": 1,\n                    \"description\": \"Industry\"\n                }\n            ],\n            \"lang\": \"en\"\n        },\n        \"ExperienceSummary\": {\n            \"TotalYearsOfManagementWorkExperience\": 1,\n            \"TotalYearsOfLowLevelManagementWorkExperience\": 1,\n            \"TotalMonthsOfWorkExperience\": 12,\n            \"ExecutiveBrief\": \"John Smith has been working in the IT occupational sector for 12 months. In the last employment he was working as a Program Manager at Daxtra Ltd. John has some experience in management (12 months).\",\n            \"TotalMonthsOfLowLevelManagementWorkExperience\": 12,\n            \"TotalMonthsOfManagementWorkExperience\": 12,\n            \"TotalYearsOfWorkExperience\": 1,\n            \"ManagementRecord\": \"Since 2017, for a total duration of 12 months, this candidate had experience at a lower grade management level working as a Program manager at Daxtra Ltd.\\n\"\n        },\n        \"FileStruct\": {\n            \"attachment\": [\n                {\n                    \"conv\": \"yes\",\n                    \"lang\": \"DA_EN\",\n                    \"doc_type\": \"cv\",\n                    \"fname\": \"0265573105213061\",\n                    \"content\": \"/tmp/soap_399146060031978\",\n                    \"ftype\": \"txt\"\n                }\n            ],\n            \"filename\": \"/tmp/soap_399146060031978\"\n        },\n        \"src\": \"DAXTRA-CVX schema:2.0.36 release:0.27.0.62456 rdate:2019-05-13\",\n        \"TextResume\": \"\\n\\nJohn Smith\\n2017-2018, Daxtra Ltd, Program manager\\nReponsible for IT project planning.\\n\\n\",\n        \"ParserInfo\": {\n            \"ConverterRelease\": \"0.20.0.62483\",\n            \"ParserConfiguration\": \"{max_len=50000} {tel_flag=} {send_zip=} {fast_conv=} {DEF_LOCAL=} {sdate=0} {no_email_body=0} {do_clever_zoning=0} {keep_zone_span=0} {keep_span=1} {complex=0} {accept_langs=} {not_accept_langs=} {prefer_lang_cv=} {pers_only=0} {projects_off=0} {tree_search_on=0} {all_skills=0} {turbo=0} {known_layouts_only=0} {split_language=0} {picture=0} {picture_inline=0} {debug=0} {ocr_allowed=1} {name_space=0} {charset=} {hrxml_upgrade_edu_hist=0}{hrxml_add_languages_section=1}{spool=} {docID=} {user=API_TEST} \",\n            \"ParserRelease\": \"0.27.0.62456\",\n            \"ParserReleaseDate\": \"2019-05-13\",\n            \"ConverterReleaseDate\": \"2019-05-14\",\n            \"ParserSchema\": \"2.0.36\"\n        }\n    }\n}"
+						},
+						{
+							"name": "/profile/full/json - text simple resume",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "account",
+											"value": "{{TEST_ACCOUNT}}",
+											"description": "`string` -- [account name](#922693b7-28fc-4730-a7c3-80fbe3c99f6c) allocated to you by DaXtra",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"value": "John Smith\n2017-2018, Daxtra Ltd, Program manager\nReponsible for IT project planning.",
+											"description": "`base64/string/binary` -- file content either Base64-encoded or direct-encoded",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{DAXTRA_SERVER_IP}}/cvx/rest/api/v1/profile/full/json",
+									"protocol": "https",
+									"host": [
+										"{{DAXTRA_SERVER_IP}}"
+									],
+									"path": [
+										"cvx",
+										"rest",
+										"api",
+										"v1",
+										"profile",
+										"full",
+										"json"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jun 2019 00:33:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.2.34 (Amazon)"
+								},
+								{
+									"key": "Content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "CVXtractorServiceHTTP",
+									"value": "v1.0"
+								},
+								{
+									"key": "Content-length",
+									"value": "1322"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Resume\": {\n        \"StructuredResume\": {\n            \"PersonName\": {\n                \"FormattedName\": \"John Smith\",\n                \"FamilyName\": \"Smith\",\n                \"GivenName\": \"John\",\n                \"sex\": \"Male\"\n            },\n            \"EmploymentHistory\": [\n                {\n                    \"employerOrgType\": \"soleEmployer\",\n                    \"EndDate\": \"2018\",\n                    \"MonthsOfWork\": 12,\n                    \"EmployerOrgName\": \"Daxtra Ltd\",\n                    \"Title\": [\n                        \"Program manager\"\n                    ],\n                    \"OrgName\": \"Daxtra Ltd\",\n                    \"PositionType\": \"PERMANENT\",\n                    \"JobArea\": \"it\",\n                    \"JobGrade\": \"joblevel-management-low\",\n                    \"StartDate\": \"2017\",\n                    \"Description\": \"Reponsible for IT project planning.\"\n                }\n            ],\n            \"Competency\": [\n                {\n                    \"skillLevel\": 100,\n                    \"skillName\": \"Project Planning\",\n                    \"description\": \"Skill\",\n                    \"auth\": true,\n                    \"skillUsed\": {\n                        \"value\": 12,\n                        \"type\": \"Months\"\n                    },\n                    \"lastUsed\": \"2018\",\n                    \"skillProficiency\": \"EXCELLENT\",\n                    \"skillAliasArray\": [\n                        \"Project Planning\"\n                    ]\n                },\n                {\n                    \"skillLevel\": 100,\n                    \"skillName\": \"Program manager\",\n                    \"description\": \"Held Position\",\n                    \"auth\": false,\n                    \"skillUsed\": {\n                        \"value\": 12,\n                        \"type\": \"Months\"\n                    },\n                    \"lastUsed\": \"2018\",\n                    \"skillProficiency\": \"EXCELLENT\",\n                    \"skillAliasArray\": [\n                        \"Program manager\"\n                    ]\n                },\n                {\n                    \"auth\": true,\n                    \"skillLevel\": 100,\n                    \"skillName\": \"industry~it\",\n                    \"skillCount\": 1,\n                    \"description\": \"Industry\"\n                }\n            ],\n            \"lang\": \"en\"\n        },\n        \"ExperienceSummary\": {\n            \"TotalYearsOfManagementWorkExperience\": 1,\n            \"TotalYearsOfLowLevelManagementWorkExperience\": 1,\n            \"TotalMonthsOfWorkExperience\": 12,\n            \"ExecutiveBrief\": \"John Smith has been working in the IT occupational sector for 12 months. In the last employment he was working as a Program Manager at Daxtra Ltd. John has some experience in management (12 months).\",\n            \"TotalMonthsOfLowLevelManagementWorkExperience\": 12,\n            \"TotalMonthsOfManagementWorkExperience\": 12,\n            \"TotalYearsOfWorkExperience\": 1,\n            \"ManagementRecord\": \"Since 2017, for a total duration of 12 months, this candidate had experience at a lower grade management level working as a Program manager at Daxtra Ltd.\\n\"\n        },\n        \"FileStruct\": {\n            \"attachment\": [\n                {\n                    \"conv\": \"yes\",\n                    \"lang\": \"DA_EN\",\n                    \"doc_type\": \"cv\",\n                    \"fname\": \"061994271552825\",\n                    \"content\": \"/tmp/soap_939467270716221\",\n                    \"ftype\": \"txt\"\n                }\n            ],\n            \"filename\": \"/tmp/soap_939467270716221\"\n        },\n        \"src\": \"DAXTRA-CVX schema:2.0.36 release:0.27.0.62456 rdate:2019-05-13\",\n        \"TextResume\": \"\\n\\nJohn Smith\\n2017-2018, Daxtra Ltd, Program manager\\nReponsible for IT project planning.\\n\\n\",\n        \"ParserInfo\": {\n            \"ConverterRelease\": \"0.20.0.62483\",\n            \"ParserConfiguration\": \"{max_len=50000} {tel_flag=} {send_zip=} {fast_conv=} {DEF_LOCAL=} {sdate=0} {no_email_body=0} {do_clever_zoning=0} {keep_zone_span=0} {keep_span=1} {complex=0} {accept_langs=} {not_accept_langs=} {prefer_lang_cv=} {pers_only=0} {projects_off=0} {tree_search_on=0} {all_skills=0} {turbo=0} {known_layouts_only=0} {split_language=0} {picture=0} {picture_inline=0} {debug=0} {ocr_allowed=1} {name_space=0} {charset=} {hrxml_upgrade_edu_hist=0}{hrxml_add_languages_section=1}{spool=} {docID=} {user=API_TEST} \",\n            \"ParserRelease\": \"0.27.0.62456\",\n            \"ParserReleaseDate\": \"2019-05-13\",\n            \"ConverterReleaseDate\": \"2019-05-14\",\n            \"ParserSchema\": \"2.0.36\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "asymbl",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "lnadw4d92",
+			"type": "string"
+		},
+		{
+			"key": "database",
+			"value": "ws_asymbl",
+			"type": "string"
+		},
+		{
+			"key": "searchMatchBaseUrl",
+			"value": "https://ds-trial.daxtra.com/jws/dispatch",
+			"type": "string"
+		}
+	]
 }
